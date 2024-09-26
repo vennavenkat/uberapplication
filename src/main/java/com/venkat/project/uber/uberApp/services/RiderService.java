@@ -2,6 +2,9 @@ package com.venkat.project.uber.uberApp.services;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
 import com.venkat.project.uber.uberApp.dto.DriverDto;
 import com.venkat.project.uber.uberApp.dto.RideDto;
 import com.venkat.project.uber.uberApp.dto.RideRequestDto;
@@ -19,7 +22,7 @@ public interface RiderService {
 
     RiderDto getMyProfile();
 
-    List<RideDto> getAllMyRides();
+    Page<RideDto> getAllMyRides(PageRequest pageRequest);
 
     Rider createNewRider(User user);
 

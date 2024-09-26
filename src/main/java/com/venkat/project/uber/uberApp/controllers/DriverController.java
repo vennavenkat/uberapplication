@@ -25,5 +25,6 @@ public class DriverController {
                                               @RequestBody RideStartDto rideStartDto) {
         return ResponseEntity.ok(driverService.startRide(rideRequestId, rideStartDto.getOtp()));
     }
+    
 
 }
