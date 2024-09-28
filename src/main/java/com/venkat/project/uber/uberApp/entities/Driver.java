@@ -1,29 +1,36 @@
 package com.venkat.project.uber.uberApp.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.locationtech.jts.geom.Point;
 
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(indexes = { @Index(name = "idx_driver_vehicle_id", columnList = "vehicleId") })
 public class Driver {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+	@OneToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
-    private Double rating;
+	private Double rating;
 
-    private Boolean available;
+	private Boolean available;
 
-    private String vehicleId;
+	private String vehicleId;
 
-    @Column(columnDefinition = "Geometry(Point, 4326)")
-    private Point currentLocation;
+	@Column(columnDefinition = "Geometry(Point, 4326)")
+	private Point currentLocation;
 }

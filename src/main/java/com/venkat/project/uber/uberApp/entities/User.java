@@ -9,7 +9,9 @@ import java.util.Set;
 import com.venkat.project.uber.uberApp.entities.enums.Role;
 
 @Entity
-@Table(name = "app_user")
+@Table(name = "app_user", indexes = {
+		@Index(name = "idx_user_email", columnList = "email")
+})
 @Getter
 @Setter
 public class User {
