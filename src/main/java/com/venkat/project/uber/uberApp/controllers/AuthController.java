@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.venkat.project.uber.uberApp.dto.DriverDto;
+import com.venkat.project.uber.uberApp.dto.LoginRequestDto;
+import com.venkat.project.uber.uberApp.dto.LoginResponseDto;
 import com.venkat.project.uber.uberApp.dto.SignupDto;
 import com.venkat.project.uber.uberApp.dto.UserDto;
 import com.venkat.project.uber.uberApp.dto.onbaoardDriverDto;
@@ -32,6 +34,13 @@ public class AuthController {
     @PostMapping("/onBoardNewDriver/{userId}")
     ResponseEntity<DriverDto> onBoardNewDriver(@PathVariable Long userId, @RequestBody onbaoardDriverDto onbaoardDriverDto){
     	return new ResponseEntity<>(authService.onboardNewDriver(userId, onbaoardDriverDto.getVehicleId()), HttpStatus.CREATED);
+    }
+    
+    @PostMapping("/login")
+    ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequestDto){
+    	String tokens[] = authService.login(loginRequestDto.getEmail(), loginRequestDto.getPassword());
+    	
+    	return ResponseEntity.ok(new LoginResponseDto(tokens[0]));
     }
     
 

@@ -7,7 +7,9 @@ E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\controllers\AuthControl
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\controllers\DriverController.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\controllers\RiderController.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\DriverDto.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\onbaoardDriverDto.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\PointDto.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\RatingDto.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\RideDto.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\RiderDto.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\dto\RideRequestDto.java
@@ -25,6 +27,7 @@ E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\enums\Role.jav
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\enums\TransactionMethod.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\enums\TransactionType.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\Payment.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\Rating.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\Ride.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\Rider.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\entities\RideRequest.java
@@ -35,6 +38,7 @@ E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\exceptions\ResourceNotF
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\exceptions\RuntimeConflictException.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\DriverRepository.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\PaymentRepository.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\Ratingrepository.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\RideRepository.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\RideRequestRepository.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\repositories\RiderRepository.java
@@ -48,12 +52,14 @@ E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\AuthServi
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\DistanceServiceOSRMImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\DriverServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\PaymentServiceImpl.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\RatingServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\RideRequestServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\RiderServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\RideServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\WalletServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\impl\WalletTransactionServiceImpl.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\PaymentService.java
+E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\RatingService.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\RideRequestService.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\RiderService.java
 E:\uberApp\src\main\java\com\venkat\project\uber\uberApp\services\RideService.java

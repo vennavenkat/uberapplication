@@ -6,7 +6,7 @@ import com.venkat.project.uber.uberApp.dto.UserDto;
 
 public interface AuthService {
 
-    String login(String email, String password);
+    String[] login(String email, String password);
 
     UserDto signup(SignupDto signupDto);
 
