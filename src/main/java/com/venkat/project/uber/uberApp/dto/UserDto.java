@@ -13,6 +13,7 @@ import com.venkat.project.uber.uberApp.entities.enums.Role;
 @NoArgsConstructor
 public class UserDto {
 
+	private Long id;
     private String name;
     private String email;
     private Set<Role> roles;
