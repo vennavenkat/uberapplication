@@ -21,6 +21,7 @@ import com.venkat.project.uber.uberApp.exceptions.RuntimeConflictException;
 import com.venkat.project.uber.uberApp.repositories.UserRepository;
 import com.venkat.project.uber.uberApp.services.AuthService;
 import com.venkat.project.uber.uberApp.services.DriverService;
+import com.venkat.project.uber.uberApp.services.EmailSenderService;
 import com.venkat.project.uber.uberApp.services.RiderService;
 import com.venkat.project.uber.uberApp.services.UserService;
 import com.venkat.project.uber.uberApp.services.WalletService;
@@ -39,6 +40,7 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JWTService jwtService;
+    private final EmailSenderService emailSenderService;
 
     @Override
     public String[] login(String email, String password) {
@@ -65,6 +67,8 @@ public class AuthServiceImpl implements AuthService {
         mappedUser.setRoles(Set.of(Role.RIDER));
         mappedUser.setPassword(passwordEncoder.encode(mappedUser.getPassword()));
         User savedUser = userRepository.save(mappedUser);
+        
+        emailSenderService.sendEmail(signupDto.getEmail(), "regarding Uber registrtration", "Successfully registered to the application thank you" );
 
 //        create user related entities
         riderService.createNewRider(savedUser);
