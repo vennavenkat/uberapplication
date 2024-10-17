@@ -25,17 +25,19 @@ public class WebSecurityConfig {
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-		
-		httpSecurity
-			.sessionManagement(sessionConfig -> sessionConfig
-						.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-			.csrf(csrfConfig -> csrfConfig.disable())
-			.authorizeHttpRequests(auth ->auth
-					.requestMatchers(PUBLIC_ROUTES).permitAll()
-					.anyRequest().authenticated()
-					)
-			.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-		return httpSecurity.build();
+
+	    httpSecurity
+	        .sessionManagement(sessionConfig -> sessionConfig
+	                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+	        .csrf(csrfConfig -> csrfConfig.disable())
+	        .authorizeHttpRequests(auth -> auth
+	            .requestMatchers(PUBLIC_ROUTES).permitAll() // Public routes
+	            .requestMatchers("/health").permitAll()     // Allow health check
+	            .anyRequest().authenticated()               // Authenticate all other requests
+	        )
+	        .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+	    
+	    return httpSecurity.build();
 	}
 	
 
