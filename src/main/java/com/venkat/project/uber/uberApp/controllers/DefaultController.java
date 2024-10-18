@@ -7,7 +7,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class DefaultController {
 
-    @GetMapping("/redirectToGoogle")
+    @GetMapping("/")
     public RedirectView redirectToGoogle() {
         return new RedirectView("https://www.google.com");
     }

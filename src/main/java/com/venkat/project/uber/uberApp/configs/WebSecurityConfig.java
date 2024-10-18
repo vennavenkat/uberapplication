@@ -28,7 +28,8 @@ public class WebSecurityConfig {
 		        "/swagger-ui.html",   // Main Swagger UI page (for older versions)
 		        "/health",            // Health check endpoint
 		        "/actuator/**",       // Actuator endpoints
-		        "/"                   // Root endpoint
+		        "/" ,
+		        "/redirectToGoogle"	// Root endpoint
 		    };
 	
 	@Bean
