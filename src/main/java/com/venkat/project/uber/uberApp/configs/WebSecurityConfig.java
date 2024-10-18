@@ -30,7 +30,7 @@ public class WebSecurityConfig {
 	        .csrf(csrfConfig -> csrfConfig.disable())
 	        .authorizeHttpRequests(auth -> auth
 	            .requestMatchers("/auth/**").permitAll()     // Public routes
-	            .requestMatchers("/health", "/actuator/**").permitAll() // Allow health check and actuator endpoints
+	            .requestMatchers("/health", "/actuator/**", "/").permitAll() // Allow health check and actuator endpoints
 	            .anyRequest().authenticated()
 	        )
 	        .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
