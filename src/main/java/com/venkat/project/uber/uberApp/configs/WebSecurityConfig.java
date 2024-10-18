@@ -21,7 +21,15 @@ public class WebSecurityConfig {
 	
 	private final JwtAuthFilter jwtAuthFilter;
 	
-	private static final String[] PUBLIC_ROUTES = {"/auth/**"};
+	  private static final String[] PUBLIC_ROUTES = {
+		        "/auth/**",           // Public authentication endpoints
+		        "/swagger-ui/**",     // Swagger UI resources
+		        "/v3/api-docs/**",    // OpenAPI documentation
+		        "/swagger-ui.html",   // Main Swagger UI page (for older versions)
+		        "/health",            // Health check endpoint
+		        "/actuator/**",       // Actuator endpoints
+		        "/"                   // Root endpoint
+		    };
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -29,7 +37,7 @@ public class WebSecurityConfig {
 	        .sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 	        .csrf(csrfConfig -> csrfConfig.disable())
 	        .authorizeHttpRequests(auth -> auth
-	            .requestMatchers("/auth/**").permitAll()     // Public routes
+	            .requestMatchers(PUBLIC_ROUTES).permitAll()     // Public routes
 	            .requestMatchers("/health", "/actuator/**", "/").permitAll() // Allow health check and actuator endpoints
 	            .anyRequest().authenticated()
 	        )
