@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.venkat.project.uber.uberApp.UberAppApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.43 s -- in com.venkat.project.uber.uberApp.UberAppApplicationTests

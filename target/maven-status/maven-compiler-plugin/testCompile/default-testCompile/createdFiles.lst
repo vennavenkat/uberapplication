@@ -1,1 +1,3 @@
+com\venkat\project\uber\uberApp\services\impl\TestContainerConfiguration.class
 com\venkat\project\uber\uberApp\UberAppApplicationTests.class
+com\venkat\project\uber\uberApp\services\impl\AuthServiceImplTest.class
